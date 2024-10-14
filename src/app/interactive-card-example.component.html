@@ -1,0 +1,500 @@
+<div fd-card-list style="display: flex; gap: 2rem; flex-wrap: wrap">
+  <fd-card [interactive]="true" role="listitem" style="max-width: 400px">
+    <fd-card-header>
+      <fd-card-main-header>
+        <fd-avatar
+          glyph="connected"
+          [circle]="true"
+          size="m"
+          ariaLabel="avatar image"
+          title="avatar image"
+        ></fd-avatar>
+        <h2 fd-card-title>Glasfaser Kunde</h2>
+        <h3 fd-card-subtitle>Daten vorhanden</h3>
+        <!--   <span fd-card-counter status="positive">3 of 10</span>
+              <button
+                    fd-button
+                    fd-card-header-action
+                    fdType="transparent"
+                    glyph="overflow"
+                    ariaLabel="More"
+                    title="More"
+                ></button> -->
+      </fd-card-main-header>
+    </fd-card-header>
+    <fd-card-content>
+      <div *ngIf="showDetails">
+        <table
+          fd-table
+          [noBorderX]="true"
+          tabindex="0"
+          [noOuterBorder]="true"
+          [topBorder]="true"
+        >
+          <thead fd-table-header>
+            <tr fd-table-row>
+              <!--<th fd-table-cell>Name</th>
+        <th fd-table-cell>Details</th>-->
+            </tr>
+          </thead>
+          <tbody fd-table-body>
+            <!-- Verkaufschance -->
+            <tr fd-table-row>
+              <td fd-table-cell>Vorgangsnummer</td>
+              <td fd-table-cell>123456</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>SGNummer <-> CRM Nummer?</td>
+              <td fd-table-cell>ABC12345</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Auftragsdatum</td>
+              <td fd-table-cell>01.10.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Auftragseingangsbestätigung versendet</td>
+              <td fd-table-cell>Ja</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Auftragstyp</td>
+              <td fd-table-cell>Hausanschluss</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Ausbauadresse</td>
+              <td fd-table-cell>Musterstraße 10</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Basisprodukt</td>
+              <td fd-table-cell>Glasfaser 500</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>CRM-Nr.</td>
+              <td fd-table-cell>CRM-987654321</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Einzelverbindungsnachweis</td>
+              <td fd-table-cell>Ja</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Hausnummer (Anschluss)</td>
+              <td fd-table-cell>10</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Hausnummerzusatz (Anschluss)</td>
+              <td fd-table-cell>B</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Letzte ABW-Erinnerung gesendet am</td>
+              <td fd-table-cell>15.09.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Letzte GNV-Erinnerung versendet am</td>
+              <td fd-table-cell>20.09.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Tatsächliches Abschlussdatum</td>
+              <td fd-table-cell>30.09.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Vertragslaufzeit Einheit</td>
+              <td fd-table-cell>Monate</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Vertragslaufzeit Wert</td>
+              <td fd-table-cell>24</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>VSE.net Referenz</td>
+              <td fd-table-cell>VS123456</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Zahlungsart</td>
+              <td fd-table-cell>Lastschrift</td>
+            </tr>
+
+            <!-- Geschäftspartner -->
+            <tr fd-table-row>
+              <td fd-table-cell>Geschäftspartner</td>
+              <td fd-table-cell>Max Mustermann</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Bestandskundenbonus berücksichtigt</td>
+              <td fd-table-cell>Ja</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Geschäftspartnernummer</td>
+              <td fd-table-cell>GP-112233</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Kunde wirbt Kunde (Abschluss)</td>
+              <td fd-table-cell>Ja</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>
+                Kunde wirbt Kunde (Vorgangsnummer des Werbenden)
+              </td>
+              <td fd-table-cell>W-554433</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Offene Aufträge</td>
+              <td fd-table-cell>Nein</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Status</td>
+              <td fd-table-cell>Aktiv</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Statusgrund</td>
+              <td fd-table-cell>Bestätigt</td>
+            </tr>
+
+            <!-- Auftrag -->
+            <tr fd-table-row>
+              <td fd-table-cell>Auftrags-ID</td>
+              <td fd-table-cell>A1234567</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Auftragsdatum</td>
+              <td fd-table-cell>01.10.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Auftragstyp</td>
+              <td fd-table-cell>Internet/Telefonie</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Ausführungsdatum</td>
+              <td fd-table-cell>05.10.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Basisprodukt</td>
+              <td fd-table-cell>Glasfaser 500</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>CRM-Nr.</td>
+              <td fd-table-cell>CRM-987654321</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Gesamtbetrag Einmalige Käufe</td>
+              <td fd-table-cell>100.00 EUR</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Gesamtbetrag im Promozeitraum (mtl.)</td>
+              <td fd-table-cell>40.00 EUR</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Gesamtbetrag nach Promozeitraum (mtl.)</td>
+              <td fd-table-cell>50.00 EUR</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Gesperrt am</td>
+              <td fd-table-cell>--</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Internet geschaltet seit</td>
+              <td fd-table-cell>05.10.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Internet vorab geschaltet</td>
+              <td fd-table-cell>Nein</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>IV geschaltet seit</td>
+              <td fd-table-cell>--</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Kündigungsfrist Einheit</td>
+              <td fd-table-cell>Monate</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Kündigungsfrist Wert</td>
+              <td fd-table-cell>3</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Nächstmögliches Vertragsende</td>
+              <td fd-table-cell>01.10.2025</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Name Endkundenvertragspartner</td>
+              <td fd-table-cell>Max Mustermann</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Promozeitraum Basisprodukt (Monate)</td>
+              <td fd-table-cell>12</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Quellkampagne</td>
+              <td fd-table-cell>Sommer2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Status Abrechnung</td>
+              <td fd-table-cell>Offen</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Status Schaltung</td>
+              <td fd-table-cell>Erfolgreich</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Vertragsbeginn</td>
+              <td fd-table-cell>01.10.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Vertragsende</td>
+              <td fd-table-cell>01.10.2025</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Vertragslaufzeit Einheit</td>
+              <td fd-table-cell>Monate</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Vertragsverlängerung Einheit</td>
+              <td fd-table-cell>Monate</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Vertragsverlängerung Wert</td>
+              <td fd-table-cell>12</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Zahlungsart</td>
+              <td fd-table-cell>Lastschrift</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </fd-card-content>
+
+    <fd-card-footer>
+      <button
+        *fdCardFooterActionItem
+        fd-button
+        fdCompact
+        (click)="toggleDetails()"
+      >
+        {{ showDetails ? 'Details ausblenden' : 'Weitere Details anzeigen' }}
+      </button>
+    </fd-card-footer>
+  </fd-card>
+
+  <fd-card [interactive]="true" role="listitem" style="max-width: 400px">
+    <fd-card-header>
+      <fd-card-main-header>
+        <fd-avatar
+          glyph="e-care"
+          size="m"
+          ariaLabel="avatar image"
+          title="avatar image"
+        ></fd-avatar>
+        <h2 fd-card-title>E-Mobility Kunde</h2>
+        <h3 fd-card-subtitle>Daten vorhanden</h3>
+        <span fd-card-counter></span>
+        <!--  <button
+                    fd-button
+                    fd-card-header-action
+                    fdType="transparent"
+                    glyph="overflow"
+                    ariaLabel="More"
+                    title="More"
+                ></button> -->
+      </fd-card-main-header>
+      <!-- <fd-card-extended-header [align]="'bottom'">
+        <div fd-card-header-column>
+          <div fd-card-header-row>
+            <fd-text text="Las Vegas, TechEd"></fd-text>
+          </div>
+          <div fd-card-header-row>
+            <fd-text text="May 3rd - 5th 2024"></fd-text>
+          </div>
+        </div>
+        <div fd-card-header-column [align]="'right'">
+          <div fd-card-header-row>
+            <span style="font-size: 1.4rem">956.00 EUR</span>
+          </div>
+        </div>
+      </fd-card-extended-header> -->
+    </fd-card-header>
+
+    <fd-card-content>
+      <div *ngIf="showDetails2">
+        <table
+          fd-table
+          [noBorderX]="true"
+          tabindex="0"
+          [noOuterBorder]="true"
+          [topBorder]="true"
+        >
+          <thead fd-table-header>
+            <tr fd-table-row>
+              <th fd-table-cell>Feld</th>
+              <th fd-table-cell>Details</th>
+            </tr>
+          </thead>
+          <tbody fd-table-body>
+            <tr fd-table-row>
+              <td fd-table-cell>Kunde-ID</td>
+              <td fd-table-cell>CUST-12345</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Kundenreferenz</td>
+              <td fd-table-cell>REF-98765</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Bonusmeter</td>
+              <td fd-table-cell>150</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Aktiviert</td>
+              <td fd-table-cell>Ja</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Aktivierungsdatum</td>
+              <td fd-table-cell>01.01.2024</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Verifikationsdatum</td>
+              <td fd-table-cell>02.01.2024</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Registrierungsdatum</td>
+              <td fd-table-cell>25.12.2023</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Gesperrt</td>
+              <td fd-table-cell>Nein</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Sperrgrund</td>
+              <td fd-table-cell>---</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Sperrzeit</td>
+              <td fd-table-cell>---</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Führerschein verifiziert</td>
+              <td fd-table-cell>Ja</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Verifikationsstatus</td>
+              <td fd-table-cell>Erfolgreich</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Führerscheinnummer</td>
+              <td fd-table-cell>DL-54321</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Ablaufdatum Führerschein</td>
+              <td fd-table-cell>31.12.2030</td>
+            </tr>
+            <tr fd-table-row>
+              <td fd-table-cell>Zahlungsart</td>
+              <td fd-table-cell>Kreditkarte</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </fd-card-content>
+
+    <fd-card-footer>
+      <button
+        *fdCardFooterActionItem
+        fd-button
+        fdCompact
+        (click)="toggleDetails2()"
+      >
+        {{ showDetails2 ? 'Details ausblenden' : 'Weitere Details einblenden' }}
+      </button>
+    </fd-card-footer>
+  </fd-card>
+
+
+  <fd-card [interactive]="true" role="listitem" style="max-width: 600px">
+  <fd-card-header>
+    <fd-card-main-header>
+      <fd-avatar
+        glyph="process"
+        size="m"
+        ariaLabel="avatar image"
+        title="avatar image"
+      ></fd-avatar>
+      <h2 fd-card-title>PDOC Monitor</h2>
+      <h3 fd-card-subtitle></h3>
+      <span fd-card-counter></span>
+      <!--  <button
+                  fd-button
+                  fd-card-header-action
+                  fdType="transparent"
+                  glyph="overflow"
+                  ariaLabel="More"
+                  title="More"
+              ></button> -->
+    </fd-card-main-header>
+    <!-- <fd-card-extended-header [align]="'bottom'">
+      <div fd-card-header-column>
+        <div fd-card-header-row>
+          <fd-text text="Las Vegas, TechEd"></fd-text>
+        </div>
+        <div fd-card-header-row>
+          <fd-text text="May 3rd - 5th 2024"></fd-text>
+        </div>
+      </div>
+      <div fd-card-header-column [align]="'right'">
+        <div fd-card-header-row>
+          <span style="font-size: 1.4rem">956.00 EUR</span>
+        </div>
+      </div>
+    </fd-card-extended-header> -->
+  </fd-card-header>
+
+  <fd-card-content>
+  <table fd-table [noBorderX]="false" tabindex="0" [noOuterBorder]="false" [topBorder]="true">
+    <thead fd-table-header>
+      <tr fd-table-row>
+        <th fd-table-cell>Schritt</th>
+        <th fd-table-cell>Beschreibung</th>
+        <th fd-table-cell>Beteiligte Daten</th>
+        <th fd-table-cell>Verwendung von PDOC</th>
+      </tr>
+    </thead>
+    <tbody fd-table-body>
+      <tr fd-table-row>
+        <td fd-table-cell>Zählerstandsübermittlung</td>
+        <td fd-table-cell>Kunde oder Techniker übermittelt den Zählerstand über App/Webportal und lädt ein Foto des Zählers hoch.</td>
+        <td fd-table-cell>Zählerstand (strukturierte Daten) <br> Zählerfoto (unstrukturierte Daten)</td>
+        <td fd-table-cell>Foto wird im PDOC-Store gespeichert</td>
+      </tr>
+      <tr fd-table-row>
+        <td fd-table-cell>Speicherung des Zählerfotos</td>
+        <td fd-table-cell>Das hochgeladene Zählerfoto wird als unstrukturierte Datei im PDOC gespeichert.</td>
+        <td fd-table-cell>Bilddatei (z.B. JPEG, PNG)</td>
+        <td fd-table-cell>PDOC speichert das Bild effizient</td>
+      </tr>
+      <tr fd-table-row>
+        <td fd-table-cell>Verknüpfung mit Zählerstand</td>
+        <td fd-table-cell>Der numerische Zählerstand wird in einer relationalen Tabelle gespeichert und mit dem Foto verknüpft.</td>
+        <td fd-table-cell>Zählerstand (strukturierte Daten) <br> Zählerfoto (PDOC)</td>
+        <td fd-table-cell>Verknüpfung von strukturierten und unstrukturierten Daten</td>
+      </tr>
+      <tr fd-table-row>
+        <td fd-table-cell>Zugriff und Prüfung</td>
+        <td fd-table-cell>Mitarbeiter oder Kunde können den Zählerstand und das Foto zur Prüfung oder Dokumentation einsehen.</td>
+        <td fd-table-cell>Zählerstand <br> Zählerfoto</td>
+        <td fd-table-cell>Direkter Zugriff auf unstrukturierte Daten über PDOC</td>
+      </tr>
+      <tr fd-table-row>
+        <td fd-table-cell>Archivierung und Compliance</td>
+        <td fd-table-cell>Das Zählerfoto wird langfristig gespeichert, um Compliance-Vorgaben und Dokumentationspflichten zu erfüllen.</td>
+        <td fd-table-cell>Bilddateien (Archivierung)</td>
+        <td fd-table-cell>PDOC speichert und archiviert das Bild</td>
+      </tr>
+    </tbody>
+  </table>
+</fd-card-content>
+
+  <fd-card-footer>
+ 
+    
+  </fd-card-footer>
+</fd-card>
+
+
+
+</div>
